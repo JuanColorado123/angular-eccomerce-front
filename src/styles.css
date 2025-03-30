@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default,
+business  --prefersdark,
+business;
+}
+
+@theme {
+  --font-montserrat: "Montserrat Alternates", sans-serif;
+  --animate-fadeIn: fadeIn 0.4s ease-in-out;
+  --animate-slideInRight: slideInRight 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Clase para aplicar la animación */
+.animate-slide-in-right {
+  animation: var(--animate-slideInRight);
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+

@@ -1,0 +1,31 @@
+<h1 class="text-2xl font-bold">Listado de productos</h1>
+<h2 class="text-lg">Total de productos
+  <span class="text-accent"></span>
+</h2>
+
+<div class="divider"></div>
+<div class="flex gap-2 items-center h-20 ">
+  <app-pagination [pages]="productsResource.value()?.pages ?? 0" [currentPage]="this.paginationService.currentPage()" />
+
+
+  <select class="select select-info select-bordered w-32"
+  (change)="productPerPage.set(+pageSelector.value)"
+  #pageSelector>
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+  </select>
+
+  <div class="flex flex-1">
+
+
+
+  </div>
+  <button routerLink="/admin/products/new" class="btn btn-active btn-success">Nuevo Producto</button>
+</div>
+
+
+<product-table [products]="productsResource.value()?.products ?? []" />
+
+

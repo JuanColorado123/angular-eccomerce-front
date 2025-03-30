@@ -1,0 +1,70 @@
+<div class="overflow-x-auto animate-fadeIn" >
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </th>
+        <th>Titulo</th>
+        <th>Precio</th>
+        <th>Inventario</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      @for (product of products(); track product.id) {
+
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </th>
+        <td>
+          <div class="flex items-center gap-3">
+            <div class="avatar">
+              <div class="mask mask-squircle h-12 w-12">
+                <img [src]="product.images | productImage" [alt]="product.slug" />
+              </div>
+            </div>
+            <div>
+              <a [routerLink]="['/admin/products/', product.id]" class="text hover:text-primary font-bold duration-500">
+                 {{ product.title }}
+              </a>
+
+              <div class="text-sm opacity-50"> {{ product.tags }} </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span class="text text-success font-bold">
+            {{ product.price | currency}}
+          </span>
+
+          <br />
+
+        </td>
+        <td>
+
+          @if (product.stock <= 10 && product.stock> 0) {
+            <span class="badge badge-warning rounded-full"> {{ product.stock }} </span>
+          }
+          @if (product.stock > 10) {
+            <span class="badge badge-info rounded-full"> {{ product.stock }} </span>
+          }
+          @else if (product.stock === 0) {
+            <span class="badge badge-error rounded-full"> no existen unidades</span>
+          }
+        </td>
+        <th>
+          <button [routerLink]="['/admin/products/', product.id]" class="btn btn-outline btn-primary btn-xs">detalles</button>
+        </th>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
