@@ -2,9 +2,9 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default,
-business  --prefersdark,
-business;
+  themes: nord --default,
+nord  --prefersdark,
+nord;
 }
 
 @theme {
