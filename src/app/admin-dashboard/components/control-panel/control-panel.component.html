@@ -1,61 +1,59 @@
 <div
-  class="bg-[#000000] h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out">
+  class="bg-black h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out">
   <div class="h-full flex flex-col justify-between">
 
     <div class="space-y-6 md:space-y-10 mt-10">
-      <div class="absolute top-4  sm:right-2 sm:left-1">
-        <button routerLink="/" (click)="authService.logout()" class="btn btn-outline btn-error btn-sm"> <img
-            src="assets/images/svg/logout.svg" alt="logout icon" width="24" height="24"> </button>
+      <div class="absolute top-4 sm:right-2 sm:left-1">
+        <button routerLink="/" (click)="authService.logout()" class="btn btn-outline btn-sm text-white hover:bg-red-600">
+          <img src="assets/images/svg/logout.svg" alt="logout icon" width="24" height="24">
+        </button>
       </div>
       <h1 routerLink="/"
-        class="hidden md:block font-bold text-sm md:text-xl text-center font-montserrat link link-hover cursor-pointer">
-        Corte<span routerLink="/" class="text-gray-50 "> | Confección</span>
+         class="hidden md:block font-bold text-sm md:text-xl text-center font-montserrat link-hover cursor-pointer text-white">
+        Corte<span class="text-gray-300"> | Confección</span>
       </h1>
 
       <div id="profile" class="space-y-3">
         <img
           src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-          alt="Avatar user" class="w-10 md:w-16 rounded-full mx-auto" />
+          alt="Avatar user" class="w-10 md:w-16 rounded-full mx-auto border-2 border-white" />
         <div>
-          <h2 class="font-medium text-xs md:text-sm text-center text-info font-montserrat">
+          <h2 class="font-medium text-xs md:text-sm text-center text-white font-montserrat">
             {{authService.user()?.fullName}}
           </h2>
           @for (role of authService.user()?.roles; track role) {
-          <p class="text-xs text-secondary-content text-center font-montserrat">{{role}}</p>
+          <p class="text-xs text-gray-400 text-center font-montserrat">{{role}}</p>
           }
-
         </div>
       </div>
 
       <div id="menu" class="flex flex-col space-y-2">
-        <a routerLink="/admin/product" routerLinkActive="bg-gray-700"
-          class="text-sm font-medium text-withe py-2 px-2 hover:bg-gray-50 hover:text-base rounded-md transition duration-150 ease-in-out">
+        <a routerLink="/admin/product" routerLinkActive="bg-neutral-800"
+          class="text-sm font-medium text-white py-2 px-2 hover:bg-neutral-800 rounded-md transition duration-150 ease-in-out">
           <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path
               d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
             </path>
           </svg>
-          <span class="font-montserrat">Administrar</span>
+          <span class="font-montserrat ml-2">Administrar</span>
         </a>
-        <a routerLink="/admin/products" routerLinkActive="bg-gray-700"
-          class="text-sm font-medium text-withe py-2 px-2 hover:bg-gray-600 hover:text-base hover:scale-105 rounded-md transition duration-150 ease-in-out">
+        <a routerLink="/admin/products" routerLinkActive="bg-neutral-800"
+          class="text-sm font-medium text-white py-2 px-2 hover:bg-neutral-800 rounded-md transition duration-150 ease-in-out">
           <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path
               d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z">
             </path>
           </svg>
-          <span class="font-montserrat">Productos</span>
+          <span class="font-montserrat ml-2">Productos</span>
         </a>
-        <div class="divider my-2"></div>
+        <div class="divider my-2 border-opacity-20"></div>
       </div>
     </div>
 
-    <h2 class="hidden md:block font-bold text-sm md:text-xs text-center pb-4">
-      Panel<span class="text-teal-600"> Administrativo</span>
+    <h2 class="hidden md:block font-bold text-sm md:text-xs text-center pb-4 text-gray-300">
+      Panel<span class="text-teal-400"> Administrativo</span>
     </h2>
   </div>
-
-
 </div>
