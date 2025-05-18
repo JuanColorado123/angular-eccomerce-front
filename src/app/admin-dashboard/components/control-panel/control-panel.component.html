@@ -1,32 +1,35 @@
 <div
-  class="bg-[#999999] h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
->
+  class="bg-[#000000] h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out">
   <div class="h-full flex flex-col justify-between">
 
     <div class="space-y-6 md:space-y-10 mt-10">
       <div class="absolute top-4  sm:right-2 sm:left-1">
-        <button routerLink="/" (click)="authService.logout()" class="btn btn-outline btn-error btn-sm" > <img src="assets/images/svg/logout.svg" alt="logout icon" width="24" height="24"> </button>
+        <button routerLink="/" (click)="authService.logout()" class="btn btn-outline btn-error btn-sm"> <img
+            src="assets/images/svg/logout.svg" alt="logout icon" width="24" height="24"> </button>
       </div>
-      <h1 routerLink="/" class="hidden md:block font-bold text-sm md:text-xl text-center font-montserrat link link-hover cursor-pointer">
-        Estilo<span routerLink="/" class="text-teal-600 "> | Confección</span>
+      <h1 routerLink="/"
+        class="hidden md:block font-bold text-sm md:text-xl text-center font-montserrat link link-hover cursor-pointer">
+        Corte<span routerLink="/" class="text-gray-50 "> | Confección</span>
       </h1>
 
       <div id="profile" class="space-y-3">
-        <img src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Avatar user" class="w-10 md:w-16 rounded-full mx-auto" />
+        <img
+          src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+          alt="Avatar user" class="w-10 md:w-16 rounded-full mx-auto" />
         <div>
           <h2 class="font-medium text-xs md:text-sm text-center text-info font-montserrat">
             {{authService.user()?.fullName}}
           </h2>
           @for (role of authService.user()?.roles; track role) {
-            <p class="text-xs text-secondary-content text-center font-montserrat">{{role}}</p>
-           }
+          <p class="text-xs text-secondary-content text-center font-montserrat">{{role}}</p>
+          }
 
         </div>
       </div>
 
       <div id="menu" class="flex flex-col space-y-2">
         <a routerLink="/admin/product" routerLinkActive="bg-gray-700"
-          class="text-sm font-medium text-withe py-2 px-2 hover:bg-gray-600 hover:text-base rounded-md transition duration-150 ease-in-out">
+          class="text-sm font-medium text-withe py-2 px-2 hover:bg-gray-50 hover:text-base rounded-md transition duration-150 ease-in-out">
           <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -56,4 +59,3 @@
 
 
 </div>
-
